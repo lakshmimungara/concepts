@@ -1,0 +1,42 @@
+IAM  --> Identity Access Management
+Authentication --> You should prove you belong to the system 
+Athorization --> You should prove you have access to that particular resource
+
+Objects:
+-----------
+1. User --> Usually a human
+2. Group --> a team like developers, admins, etc. group represents similar roles and responisibilities 
+3. Permissions --> what a user/group can do
+-> what actions we can perform on which resource
+
+-> Identity --> user or group == entity 
+4. Resources/Services(Nouns) --> EC2, S3, Route53, RDS etc.
+5. Actions(verb) --> what you can do on that resource 
+CRUD -> create, read, user, delete
+
+1. Create User:
+----------------
+AWS account --> IAM --> users --> create user --> enter the name --> Next --> click on Provide AWS console access -> click on I want to create an IAM user --> Enter the custom password --> Next --> Create user 
+
+-> Generally, we don't access our AWS account with root access
+-> Root user --> who created AWS account. It is unique in all AWS accounts 
+
+-> After creation of user, we will get one link 
+-> That link we will share to the users 
+-> share user-name and password
+
+-> By default is, no access to any resources 
+-> we have to give permission
+
+Users --> user-name(what you have created) --> permissions --> add permissions --> Attach policies directly --> AWS managed - job functions(filter by type) --> clieck on ReadOnlyAccess --> Add permissions
+
+-> Generally, ReadOnlyAccess can be given to audit team 
+
+-> To share the roles and responsibilities to a team 
+User group --> create group --> Name of the group(audit) --> add users(click on daws-81s and joindevops.com) --> create 
+
+User --> joindevops.com --> permissions policies --> remove ReadOnlyAccess permission 
+
+User group --> audit --> permissions --> Add permissions --> Attach policy --> AWS managed - job function --> ReadOnlyAccess --> Attach policies 
+
+
